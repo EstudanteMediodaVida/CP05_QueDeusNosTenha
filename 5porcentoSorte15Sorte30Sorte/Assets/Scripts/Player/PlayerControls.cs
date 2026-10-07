@@ -51,7 +51,7 @@ public class PlayerControls : MonoBehaviour
 
     void Move()
     {
-        direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0.0f) * moveSpeed;
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), direction.y) * moveSpeed;
 
         if(direction.x > 0)
         {
@@ -112,11 +112,11 @@ public class PlayerControls : MonoBehaviour
 
     public int Jumping()
     {
-        return (int)direction.y;
+        return (int)rb.linearVelocityY;
     }
 
-    public int Falling()
+    public float Falling()
     {
-        return(int)direction.y;
+        return rb.linearVelocityY;
     }
 }

@@ -15,6 +15,6 @@ public class PlayerAnimations : MonoBehaviour
     {
         anim.SetInteger("pMove", pCon.MoveValue());
         anim.SetInteger("pJump", pCon.Jumping());
-        anim.SetInteger("pFall", pCon.Falling());
+        anim.SetFloat("pFall", pCon.Falling());
     }
 }
